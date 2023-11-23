@@ -4,8 +4,74 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>NavigationBar</title>
+    <link rel="stylesheet"
+          href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"/>
 </head>
 <body>
-test123
+<div class="main-wrapper">
+    <nav class="navigation">
+        <div class="selection">
+            <div class="selection__headline">Mail</div>
+            <div class="selection__item selection__item--active-indicator">
+
+                <div class="selection__item__icon">
+                    <span class="material-symbols-outlined">inbox</span>
+                </div>
+                <div class="selection__item__label-text">Inbox
+                </div>
+                <div class="selection__item__badge-label-text">26</div>
+            </div>
+
+            <div class="selection__item ">
+
+                <div class="selection__item__icon">
+                    <span class="material-symbols-outlined">outbox</span>
+                </div>
+                <div class="selection__item__label-text">Outbox
+                </div>
+                <div class="selection__item__badge-label-text">10</div>
+            </div>
+
+            <div class="selection__item ">
+
+                <div class="selection__item__icon">
+                    <span class="material-symbols-outlined">favorite</span>
+                </div>
+                <div class="selection__item__label-text">Favorites
+                </div>
+
+                <div class="selection__item__badge-label-text">1</div>
+            </div>
+
+            <div class="selection__item ">
+
+                <div class="selection__item__icon">
+                    <span class="material-symbols-outlined">delete</span>
+                </div>
+                <div class="selection__item__label-text">Trash
+                </div>
+
+                <div class="selection__item__badge-label-text"></div>
+            </div>
+        </div>
+        <div class="selection">
+            <div class="selection__headline">Labels</div>
+            <div class="selection__item ">
+
+                <div class="selection__item__icon">
+                    <span class="material-symbols-outlined">circle</span>
+                </div>
+                <div class="selection__item__label-text">Label
+                </div>
+
+                <div class="selection__item__badge-label-text"></div>
+            </div>
+        </div>
+
+    </nav>
+    <main class="main">
+        <div class="scrim"></div>
+    </main>
+</div>
 </body>
 </html>
