@@ -444,7 +444,6 @@ body {
       grid-area: label-text;
       padding: 4px 7px;
       grid-column: span 2;
-      background: inherit;
     }
 
     &__icon {
@@ -453,7 +452,6 @@ body {
       display: flex;
       align-items: center;
       justify-content: center;
-      isolation: isolate;
 
 
     }
@@ -471,24 +469,7 @@ body {
       text-align: center;
     }
 
-    &--active-indicator {
-      background: inherit;
-      border-radius: 0;
 
-
-      .selection__item__icon {
-        &::after {
-          z-index: -1;
-          content: '';
-          position: absolute;
-          width: 100%;
-          height: 32px;
-          border-radius: 16px;
-          background: var(--md-sys-color-secondary-container);
-        }
-
-      }
-    }
   }
 } @container main (max-width:#{$breakpoint-phone}) {
 
@@ -497,22 +478,17 @@ body {
   grid-template-areas: 'main' 'nav';
 
   .navigation {
-    display: flex;
-
     width: 100%;
   }
 
   .selection__headline {
     display: none;
-
-
   }
 
   .selection {
     display: flex;
     border-bottom: none;
     flex-grow: 1;
-
   }
 
   .selection:last-child {
@@ -524,26 +500,9 @@ body {
     color: var(--md-sys-color-on-secondary-container);
 
     &__badge-label-text {
-      left: calc(-50%);
+      grid-area: auto;
+      left: calc(50% + 4px);
       background: var(--md-ref-palette-error40);
-    }
-
-    &--active-indicator {
-      background: inherit;
-
-      .selection__item__icon {
-        &::after {
-          z-index: -1;
-          content: '';
-          position: absolute;
-          width: 100%;
-          height: 32px;
-          border-radius: 16px;
-          background: var(--md-sys-color-secondary-container);
-        }
-
-      }
-
     }
   }
 }
@@ -578,8 +537,9 @@ body {
     padding: 0 12px;
     isolation: isolate;
 
+
     &:hover {
-      --state-layer-opacity: 0.60;
+      --state-layer-opacity: 0.08;
     }
 
     &::before {
@@ -603,6 +563,10 @@ body {
     &__icon {
       flex-shrink: 0;
       padding: 16px 12px 16px 16px;
+
+      &::after {
+        content: '';
+      }
     }
 
     &__badge-label-text {
@@ -611,12 +575,22 @@ body {
     }
 
     &--active-indicator {
-      background: var(--md-sys-color-secondary-container);
-      border-radius: 36px;
+      position: relative;
+      isolation: isolate;
+
       pointer-events: none;
+      --state-layer-opacity: 1;
+
+
+      &::before {
+        background: var(--md-sys-color-secondary-container);
+      }
+
+
     }
   }
 }
+
 
 .main {
   grid-area: main;
